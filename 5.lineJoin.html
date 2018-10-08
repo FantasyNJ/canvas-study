@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+    </style>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #aaa">
+    当前浏览器不支持canvas
+</canvas>
+<script>
+    /*
+    * lineJoin: miter(默认 尖角) round(圆角) bevel(斜角)
+    * miterLimit: 内角与外角的最大值，只有设置lineJoin:miter时才有效,默认为10
+    * */
+    let canvas = document.getElementById('canvas')
+
+    canvas.width = 800
+    canvas.height = 800
+
+    let ctx = canvas.getContext('2d')
+
+    ctx.lineJoin = 'miter'
+    ctx.miterLimit = 10
+    ctx.lineWidth = 10
+
+    // 绘制矩形
+    ctx.rect(100,100,300,200)
+    ctx.strokeStyle = 'red'
+
+    ctx.stroke()
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{margin: 0;padding: 0}
+    </style>
+</head>
+<body>
+<canvas id="canvas" style="border: 1px solid #aaa">
+    当前浏览器不支持canvas
+</canvas>
+<script>
+    let canvas = document.getElementById('canvas')
+
+    canvas.width = 800
+    canvas.height = 800
+
+    let ctx = canvas.getContext('2d')
+
+    ctx.lineWidth = 10
+    ctx.strokeStyle = 'red'
+    ctx.fillStyle = 'yellow'
+
+    ctx.beginPath()  // 可省略
+    ctx.moveTo(100, 100)
+    ctx.lineTo(700, 700)
+    ctx.lineTo(100, 700)
+    ctx.closePath()
+
+
+    ctx.fill()  // fill和stroke要注意顺序
+    ctx.stroke()
+</script>
+</body>
+</html>
